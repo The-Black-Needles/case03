@@ -1,0 +1,4 @@
+artifacts/screenshots/
+artifacts/exports/
+*.ndjson
+.DS_Store

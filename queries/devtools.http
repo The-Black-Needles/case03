@@ -1,0 +1,121 @@
+### 0) Índices (ajuste o padrão conforme seu ambiente)
+GET _cat/indices?v&s=index&h=index,docs.count
+
+### 1) Amostra de documentos (trocar "paloalto-*" pelo seu índice)
+GET paloalto-*/_search
+{
+  "size": 5,
+  "_source": [
+    "@timestamp","event.dataset","log.file.path","event.original",
+    "source.ip","destination.ip","url.path","http.request.method","user_agent.original"
+  ]
+}
+
+### 2) Campos/datasets úteis
+GET paloalto-*/_search
+{
+  "size": 0,
+  "aggs": {
+    "paths": { "terms": { "field": "log.file.path.keyword", "size": 20 } },
+    "datasets": { "terms": { "field": "event.dataset.keyword", "size": 20 } }
+  }
+}
+
+### 3) Indicadores públicos (CVE-2024-3400)
+
+# 3.1 "failed to unmarshal session(" (gpsvc)
+GET paloalto-*/_search
+{
+  "query": { "match_phrase": { "event.original": "failed to unmarshal session(" } },
+  "sort": [{ "@timestamp": "asc" }],
+  "_source": ["@timestamp","log.file.path","event.original"]
+}
+
+# 3.2 "failed to load file /tmp/sslvpn/session_" (zero-byte file creation)
+GET paloalto-*/_search
+{
+  "query": { "match_phrase": { "event.original": "failed to load file /tmp/sslvpn/session_" } },
+  "sort": [{ "@timestamp": "asc" }],
+  "_source": ["@timestamp","log.file.path","event.original"]
+}
+
+# 3.3 Endpoint explorado (hipreport.esp)
+GET paloalto-*/_search
+{
+  "query": { "query_string": { "query": "event.original:*hipreport.esp* OR url.path:*hipreport.esp*" } },
+  "sort": [{ "@timestamp": "asc" }],
+  "_source": ["@timestamp","source.ip","destination.ip","url.path","http.request.method","event.original"]
+}
+
+### 4) Execução externa / pós-exploração
+
+# 4.1 Comandos externos (wget/curl)
+GET paloalto-*/_search
+{
+  "query": {
+    "bool": {
+      "should": [
+        { "match_phrase": { "event.original": "wget " } },
+        { "match_phrase": { "event.original": "curl " } }
+      ],
+      "minimum_should_match": 1
+    }
+  },
+  "sort": [{ "@timestamp": "asc" }],
+  "_source": ["@timestamp","event.original","source.ip","destination.ip"]
+}
+
+# 4.2 Marcador worldtimeapi.org
+GET paloalto-*/_search
+{
+  "query": { "match_phrase": { "event.original": "worldtimeapi.org/api/timezone/etc/utc" } },
+  "_source": ["@timestamp","event.original","source.ip","destination.ip"]
+}
+
+# 4.3 Termos 'patch' / 'policy'
+GET paloalto-*/_search
+{
+  "query": { "query_string": { "query": "event.original:*patch* OR event.original:*policy*" } },
+  "sort": [{ "@timestamp": "asc" }],
+  "_source": ["@timestamp","event.original"]
+}
+
+### 5) IPs de origem e janela do incidente
+
+# 5.1 Top IPs de origem (SSL-VPN/GlobalProtect)
+GET paloalto-*/_search
+{
+  "size": 0,
+  "query": {
+    "query_string": {
+      "query": "event.original:*global-protect* OR event.original:*ssl-vpn* OR url.path:*global-protect* OR url.path:*ssl-vpn*"
+    }
+  },
+  "aggs": { "src": { "terms": { "field": "source.ip", "size": 20 } } }
+}
+
+# 5.2 Primeiro evento com indício de exploração
+GET paloalto-*/_search
+{
+  "size": 1,
+  "query": {
+    "query_string": {
+      "query": "event.original:(*failed to unmarshal session* OR *hipreport.esp*)"
+    }
+  },
+  "sort": [{ "@timestamp": "asc" }],
+  "_source": ["@timestamp","event.original","source.ip","url.path"]
+}
+
+# 5.3 Último evento com indício de exploração
+GET paloalto-*/_search
+{
+  "size": 1,
+  "query": {
+    "query_string": {
+      "query": "event.original:(*failed to unmarshal session* OR *hipreport.esp*)"
+    }
+  },
+  "sort": [{ "@timestamp": "desc" }],
+  "_source": ["@timestamp","event.original","source.ip","url.path"]
+}

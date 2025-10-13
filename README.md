@@ -14,7 +14,6 @@ Este repositório documenta a resposta a incidente (DFIR/Threat Hunting) do lab 
 - **GitHub** (versionamento da documentação)
 
 > **Padrão de índice:** ajuste `paloalto-*` nas consultas para refletir seu ambiente (ex.: `paloalto-*`, `logs-*`, `filebeat-*` etc.).  
-> **Timezone dos exemplos:** `America/Sao_Paulo (UTC-3)`.
 
 ---
 
@@ -56,8 +55,6 @@ Para buscas rápidas no **Discover/KQL**, use **`queries/kql.md`**.
 ---
 
 ## 4) Linha de Raciocínio (Timeline Analítica)
-
-> Preencha a tabela com seus timestamps **em America/Sao_Paulo** e referencie prints em `artifacts/screenshots/`.
 
 | Etapa | Evidência (consulta) | O que observamos | Implicação |
 |---|---|---|---|

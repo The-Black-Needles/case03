@@ -1,0 +1,22 @@
+{
+  "total": 10000,
+  "first": "2024-04-26T17:57:30.751488514Z",
+  "last": "2024-04-26T17:57:30.893315446Z",
+  "samples": [
+    {
+      "ts": "2024-04-26T17:57:30.751488514Z",
+      "path": "/mnt/palo_alto2/var/log/pan/check_plugin_compat.log",
+      "msg": "2024-04-21 07:55:35,686 check_plugin_compat INFO Check dependencies during installation of dlp 5.0.1"
+    },
+    {
+      "ts": "2024-04-26T17:57:30.758887761Z",
+      "path": "/mnt/palo_alto2/var/log/pan/check_plugin_compat.log",
+      "msg": "2024-04-21 07:55:36,342 check_plugin_compat INFO Check dependencies during installation of vm_series 5.0.1"
+    },
+    {
+      "ts": "2024-04-26T17:57:30.758193291Z",
+      "path": "/mnt/palo_alto2/var/log/pan/check_plugin_compat.log",
+      "msg": "2024-04-21 07:55:36,048 check_plugin_compat INFO Check dependencies during installation of openconfig 2.0.0"
+    }
+  ]
+}

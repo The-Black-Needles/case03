@@ -2,6 +2,12 @@
   "total": 10000,
   "first": "2024-04-26T17:57:30.751488514Z",
   "last": "2024-04-26T17:57:30.893315446Z",
+  "failed_load_count": 0,
+  "unique_session_files": 0,
+  "top_session_files": [],
+  "per_hour": {
+    "2024-04-26T17": 50
+  },
   "samples": [
     {
       "ts": "2024-04-26T17:57:30.751488514Z",

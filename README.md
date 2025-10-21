@@ -1,4 +1,5 @@
-# PaloAltoRCE – DFIR / Threat Hunting (Elastic/Kibana)
+# PaloAlto RCE Elastic SOC
+*(slug: case03)*
 
 Este repositório documenta a resposta a incidente (DFIR/Threat Hunting) do lab **PaloAltoRCE** (CyberDefenders), que simula exploração de uma falha de **execução remota de código (RCE)** em firewalls Palo Alto (PAN-OS) via GlobalProtect – comumente associada ao **CVE-2024-3400**. O caso explora como um atacante pode executar comandos com privilégios elevados no firewall, estabelecer persistência e pivotar para ativos internos.
 

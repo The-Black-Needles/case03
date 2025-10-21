@@ -1,0 +1,79 @@
+{
+  "took": 5,
+  "timed_out": false,
+  "_shards": {
+    "total": 1,
+    "successful": 1,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": {
+      "value": 2014,
+      "relation": "eq"
+    },
+    "max_score": null,
+    "hits": [
+      {
+        "_index": "paloalto-linux-messages-2024.04.26",
+        "_id": "zXSOG48BvPtxZFjwmQF1",
+        "_score": null,
+        "_source": {
+          "log": {
+            "file": {
+              "path": "/mnt/palo_alto2/var/log/pan/gpsvc.log"
+            }
+          },
+          "event": {
+            "original": """{"level":"info","time":"2024-04-21T08:06:32.124890099-07:00","message":"============= Start gpsvc... ============="}"""
+          },
+          "message": """{"level":"info","time":"2024-04-21T08:06:32.124890099-07:00","message":"============= Start gpsvc... ============="}""",
+          "@timestamp": "2024-04-26T17:58:01.306455127Z"
+        },
+        "sort": [
+          1714154281306
+        ]
+      },
+      {
+        "_index": "paloalto-linux-messages-2024.04.26",
+        "_id": "znSOG48BvPtxZFjwmQF1",
+        "_score": null,
+        "_source": {
+          "log": {
+            "file": {
+              "path": "/mnt/palo_alto2/var/log/pan/gpsvc.log"
+            }
+          },
+          "event": {
+            "original": """{"level":"info","time":"2024-04-21T08:06:32.124997885-07:00","message":"[Version]: 3.pan"}"""
+          },
+          "message": """{"level":"info","time":"2024-04-21T08:06:32.124997885-07:00","message":"[Version]: 3.pan"}""",
+          "@timestamp": "2024-04-26T17:58:01.306503911Z"
+        },
+        "sort": [
+          1714154281306
+        ]
+      },
+      {
+        "_index": "paloalto-linux-messages-2024.04.26",
+        "_id": "z3SOG48BvPtxZFjwmQF1",
+        "_score": null,
+        "_source": {
+          "log": {
+            "file": {
+              "path": "/mnt/palo_alto2/var/log/pan/gpsvc.log"
+            }
+          },
+          "event": {
+            "original": """{"level":"info","time":"2024-04-21T08:06:32.125014261-07:00","message":"[Git Version]: ca0660bda21"}"""
+          },
+          "message": """{"level":"info","time":"2024-04-21T08:06:32.125014261-07:00","message":"[Git Version]: ca0660bda21"}""",
+          "@timestamp": "2024-04-26T17:58:01.306516998Z"
+        },
+        "sort": [
+          1714154281306
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+<<  {
+  "took": 6,
+  "timed_out": false,
+  "_shards": {
+    "total": 1,
+    "successful": 1,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": {
+      "value": 10000,
+      "relation": "gte"
+    },
+    "max_score": null,
+    "hits": []
+  },
+  "aggregations": {
+    "first_seen": {
+      "value": 1714154250751,
+      "value_as_string": "2024-04-26T17:57:30.751Z"
+    },
+    "last_seen": {
+      "value": 1714155263138,
+      "value_as_string": "2024-04-26T18:14:23.138Z"
+    },
+    "per_hour": {
+      "buckets": [
+        {
+          "key_as_string": "2024-04-26T17:00:00.000Z",
+          "key": 1714150800000,
+          "doc_count": 1882731
+        },
+        {
+          "key_as_string": "2024-04-26T18:00:00.000Z",
+          "key": 1714154400000,
+          "doc_count": 3709
+        }
+      ]
+    }
+  }
+} >>

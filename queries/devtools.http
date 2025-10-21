@@ -49,3 +49,62 @@ GET paloalto-linux-messages-*/_search
   },
   "sort": [{ "@timestamp": "asc" }]
 }
+
+### phase03 - session artifacts (list)
+GET paloalto-linux-messages-*/_search
+{
+  "size": 50,
+  "_source": ["@timestamp","log.file.path","message","event.original"],
+  "query": {
+    "query_string": {
+      "query": "(message:*\"/tmp/sslvpn/session_\" OR event.original:*\"/tmp/sslvpn/session_\") OR (message:*\"failed to load file /tmp/sslvpn/session_\" OR event.original:*\"failed to load file /tmp/sslvpn/session_\")"
+    }
+  },
+  "sort": [{ "@timestamp": "asc" }]
+}
+
+### phase03 - session artifacts (first/last)
+GET paloalto-linux-messages-*/_search
+{
+  "size": 0,
+  "query": {
+    "query_string": {
+      "query": "(message:*\"/tmp/sslvpn/session_\" OR event.original:*\"/tmp/sslvpn/session_\") OR (message:*\"failed to load file /tmp/sslvpn/session_\" OR event.original:*\"failed to load file /tmp/sslvpn/session_\")"
+    }
+  },
+  "aggs": {
+    "first_seen": { "min": { "field": "@timestamp" } },
+    "last_seen":  { "max": { "field": "@timestamp" } },
+    "per_hour":   { "date_histogram": { "field": "@timestamp", "fixed_interval": "1h", "min_doc_count": 1 } }
+  }
+}
+
+### phase03 - hipreport.esp (SSLVPN)
+GET paloalto-sslvpn-access-*/_search
+{
+  "size": 50,
+  "_source": ["@timestamp","url.path","http.request.method","client.ip","source.ip","user_agent.original","message","event.original"],
+  "query": { "query_string": { "query": "(url.path:*hipreport.esp* OR message:*hipreport.esp* OR event.original:*hipreport.esp*)" } },
+  "sort": [{"@timestamp":"asc"}]
+}
+
+### phase03 - hipreport.esp (NGINX fallback)
+GET paloalto-nginx-access-*/_search
+{
+  "size": 50,
+  "_source": ["@timestamp","url.path","http.request.method","client.ip","source.ip","user_agent.original","message","event.original"],
+  "query": { "query_string": { "query": "(url.path:*hipreport.esp* OR message:*hipreport.esp* OR event.original:*hipreport.esp*)" } },
+  "sort": [{"@timestamp":"asc"}]
+}
+
+### phase03 - descobrir campos de IP/UA (SSLVPN e NGINX)
+GET paloalto-sslvpn-access-*/_field_caps?fields=client.ip,source.ip,user_agent.original,url.path,http.request.method
+GET paloalto-nginx-access-*/_field_caps?fields=client.ip,source.ip,user_agent.original,url.path,http.request.method
+
+
+GET paloalto-sslvpn-access-*/_search
+{
+  "size": 0,
+  "query": { "query_string": { "query": "(url.path:*hipreport.esp* OR message:*hipreport.esp* OR event.original:*hipreport.esp*)" } },
+  "aggs": { "by_ip": { "terms": { "field": "client.ip", "size": 20, "missing": "0.0.0.0" } } }
+}

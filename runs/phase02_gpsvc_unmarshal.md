@@ -2,7 +2,7 @@
 
 ## 2.1 gpsvc presence (sample)
 **Comando (DevTools):**
-```http
+~~~http
 GET paloalto-linux-messages-*/_search
 {
   "size": 3,
@@ -19,11 +19,11 @@ GET paloalto-linux-messages-*/_search
   },
   "sort": [{ "@timestamp": "asc" }]
 }
-Resultado (resumo): hits.total.value = 2014
-Amostra real (3 hits):
+~~~
 
-json
-Copiar código
+**Resultado (resumo):** `hits.total.value = 2014`  
+**Amostra real (3 hits):**
+~~~json
 {
   "took": 5,
   "hits": {
@@ -53,13 +53,15 @@ Copiar código
     ]
   }
 }
-Análise: fonte gpsvc.log confirmada e volumosa — local típico dos erros de sessão ligados à exploração do GlobalProtect.
+~~~
 
-2.2 gpsvc count
-Comando (DevTools):
+**Análise:** fonte `gpsvc.log` confirmada e volumosa — local típico dos erros de sessão ligados à exploração do GlobalProtect.
 
-http
-Copiar código
+---
+
+## 2.2 gpsvc count
+**Comando (DevTools):**
+~~~http
 GET paloalto-linux-messages-*/_count
 {
   "query": {
@@ -72,21 +74,23 @@ GET paloalto-linux-messages-*/_count
     }
   }
 }
-Resultado (real):
+~~~
 
-json
-Copiar código
+**Resultado (real):**
+~~~json
 {
   "count": 2014,
   "_shards": { "total": 1, "successful": 1, "skipped": 0, "failed": 0 }
 }
-Análise: confirma o volume total de eventos em gpsvc.log no período de ingestão do índice.
+~~~
 
-2.3 "failed to unmarshal session" (IOC chave)
-Comando (DevTools):
+**Análise:** confirma o volume total de eventos em `gpsvc.log` no período de ingestão do índice.
 
-http
-Copiar código
+---
+
+## 2.3 "failed to unmarshal session" (IOC chave)
+**Comando (DevTools):**
+~~~http
 GET paloalto-linux-messages-*/_search
 {
   "size": 20,
@@ -99,10 +103,10 @@ GET paloalto-linux-messages-*/_search
   },
   "sort": [{ "@timestamp": "asc" }]
 }
-Resultado (recorte real): hits.total.value = 101
+~~~
 
-json
-Copiar código
+**Resultado (recorte real):** `hits.total.value = 101`
+~~~json
 {
   "hits": {
     "total": { "value": 101, "relation": "eq" },
@@ -118,18 +122,14 @@ Copiar código
     ]
   }
 }
-Análise (pontos):
+~~~
 
-Path traversal para sslvpndocs / device_telemetry;
+**Análise (pontos):**
+- **Path traversal** para `sslvpndocs` / `device_telemetry`;
+- **Execução de comandos** via backticks + `echo <base64> | bash`;
+- **Pós-execução**: reverse shell (`/dev/tcp/54.162.164.22/1337`) e download/exec (`185.196.9.31:8080`, `138.197.162.79:65534`).
 
-Execução de comandos via backticks + echo <base64> | bash;
-
-Pós-execução: reverse shell (/dev/tcp/54.162.164.22/1337) e download/exec (185.196.9.31:8080, 138.197.162.79:65534).
-
-Arquivos-verdade no repo:
-
-results/phase02/search_gpsvc_sample.json
-
-results/phase02/count_gpsvc.json
-
-results/phase02/search_unmarshal_session.json
+**Arquivos-verdade no repo:**
+- `results/phase02/search_gpsvc_sample.json`
+- `results/phase02/count_gpsvc.json`
+- `results/phase02/search_unmarshal_session.json`
